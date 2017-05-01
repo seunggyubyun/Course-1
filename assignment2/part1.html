@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head>
+  <style>
+
+
+
+
+  </style>
+</head>
+  <body onload="guess_colour()">
+  <script>
+  function guess_colour(){
+    var index;
+    var num_guesses = 0;
+    var colours = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "red", "white", "yellow"];
+    index =Math.random()*9;
+    index=Math.floor(index);
+    var correct = false;
+    var chosen_colour = colours[index];
+    while(correct == false){
+      var guessed_colour = prompt("I am thinking of one of these colours\n\n blue cyan gold gray green magenta orange red white yellow");
+      num_guesses++;
+      if(guessed_colour == chosen_colour){
+        mybody =document.getElementsByTagName("body")[0];
+        mybody.style.background=guessed_colour;
+          alert('Congratulations! You have guessed the color!'+num_guesses)
+          correct=true;
+          break;
+      }
+    }
+  }
+    </script></body></html>
